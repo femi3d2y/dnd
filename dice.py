@@ -2,9 +2,9 @@ import random
 
 def die_100():
     ls = []
-    for i in range(0,91,10):
+    for n in range(0,91,10):
 
-        ls.append(i) 
+        ls.append(n) 
 
     roll = random.choice(ls)  
 
@@ -16,4 +16,4 @@ def die_10():
 
     return roll
 
-print(die_100())
+print(die_100()+die_10())
