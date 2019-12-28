@@ -1,5 +1,4 @@
-
-	A caster teleports 25 ft. to the left of their location. A trail of fire appears from their starting position to their teleported position.
+A caster teleports 25 ft. to the left of their location. A trail of fire appears from their starting position to their teleported position.
     The spell fails to take effect… until 1d4 rounds later.
     Something Fishy: the caster is left smelling of fish. The target of the spell also smells of fish. If the spell affects an area, the area smells of fish. If the spell produces a projectile the projectile becomes a fish(no change to damage type).
     All the players randomly change bodies for 1d4 rounds.
