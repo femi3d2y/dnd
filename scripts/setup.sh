@@ -6,10 +6,12 @@ sudo apt install python3
 
 sudo apt install python3-pip
 
-pip3 install virtualenv
+sudo apt install python3-venv
 
 mkdir project
 
 cd project
 
 python3 -m venv venv
+
+
