@@ -16,15 +16,15 @@ connection = connect(
 
 f = open('./effects.txt', 'r')
 	
-for line in f.readlines():
-	try:
+try:
+	for line in f.readlines():
 		with connection.cursor() as cursor:
-			query = "INSERT INTO effects (effect) values ('line')"		
-			cursor.execute(query)
+			cursor.execute("""INSERT INTO effects (effect) VALUES ("%s")"""
+			% (line))
 			connection.commit()
 
-	finally:
-		connection.close()
+finally:
+	connection.close()
 			
 f.close()
 exit()
