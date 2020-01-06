@@ -16,4 +16,14 @@ def die_10():
 
     return roll
 
-print(die_100()+die_10())
+def die_20():
+
+    roll = random.randint(1,20)
+
+    return roll
+
+def true_100():
+
+    roll = random.randint(0,99)
+
+    return roll

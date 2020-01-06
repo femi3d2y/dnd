@@ -5,6 +5,7 @@ python3 << EOF
 import os
 from pymysql import connect
 
+
 connection = connect(
     host = os.getenv('MY_SQL_HOST'),
     user = os.getenv('MY_SQL_USER'),
@@ -14,7 +15,7 @@ connection = connect(
 )
 
 
-f = open('./effects.txt', 'r')
+f = open('./data/effects.txt', 'r')
 	
 try:
 	for line in f.readlines():
