@@ -18,7 +18,7 @@ connection = connect(
 )
 
 
-f = open('../../data/effects.txt', 'r')
+f = open('../data/effects.txt', 'r')
 	
 try:
 	for line in f.readlines():
