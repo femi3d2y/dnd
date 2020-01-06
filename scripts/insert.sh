@@ -2,9 +2,12 @@
 
 python3 << EOF
 
+from application import db, models
 import os
 from pymysql import connect
 
+db.drop_all()
+db.create_all()
 
 connection = connect(
     host = os.getenv('MY_SQL_HOST'),
@@ -15,7 +18,7 @@ connection = connect(
 )
 
 
-f = open('./data/effects.txt', 'r')
+f = open('../../data/effects.txt', 'r')
 	
 try:
 	for line in f.readlines():
