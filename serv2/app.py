@@ -1,9 +1,9 @@
 from flask import Flask
-from dnd_magic import dice
+from application import dice
 
 app = Flask(__name__)
 
-@app.route('/hundred')
+@app.route('/hundred', methods=['POST'])
 def hundred():
 
    num = die_100()

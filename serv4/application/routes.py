@@ -1,14 +1,11 @@
-from flask import render_template, request
+from flask import request
 from application import app
 
 
-@app.route('/')
-@app.route('/home', methods=['GET'])
-def home():
-    requests.get('URL of VM', json=num)
 
-    requests.get('URL of VM', json=num)
+@app.route('/data', methods=['POST'])
+def service4():
+    requests.get('URL of VM', json=hundred)
 
-
-    return render_template('home.html')
+    requests.get('URL of VM', json=ten)
 
