@@ -14,7 +14,8 @@ def home():
     form = SubmitForm()
 
     hundred = ''
-    ten =''
+    ten = ''
+    effects = ''
 
     if form.is_submitted():
         response = requests.post('http://flask-service:5001/service')
@@ -23,12 +24,12 @@ def home():
         response1 = requests.post('http://flask-service2:5002/service2')
         ten = response1.json()['value']
 
-      # response2 = requests.get('35.246.77.128:5003')
-      # data2 = response2.json()
+        response2 = requests.post('http://flask-data:5003/data')
+        effects = response2.json()['result']
 
 
 
-    return render_template('home.html', form=form, hundred=hundred, ten=ten)
+    return render_template('home.html', form=form, hundred=hundred, ten=ten, effects=effects)
 
 if __name__=='__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
