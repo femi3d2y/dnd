@@ -1,14 +1,16 @@
 from flask import Flask
-from application import dice
+import dice
 
 app = Flask(__name__)
 
-@app.route('/hundred', methods=['POST'])
-def hundred():
+@app.route('/service', methods=['POST'])
+def service():
 
-   num = die_100()
+  hundred = die_100()
 
-   return num
+
+  return {'value':f'{hundred}'}
+   
 
 
 if __name__=='__main__':

@@ -1,14 +1,14 @@
 from flask import Flask
-from application import dice
+import dice
 
 app = Flask(__name__)
 
-@app.route('/ten', methods=['POST'])
-def ten():
+@app.route('/service2', methods=['POST'])
+def service2():
 
-   num = die_10()
+   ten = die_10()
 
-   return num
+   return ten
 
 if __name__=='__main__':
-    app.run(debug=True, host='0.0.0.0', port=5001)
+    app.run(debug=True, host='0.0.0.0' port=5002)

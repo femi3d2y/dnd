@@ -20,6 +20,8 @@ services:
       build:
         context: ./serv/
         dockerfile: Dockerfile
+      environment:
+           - KEY=${KEY}
     flask-service:
       build:
         context: ./serv2/

@@ -1,7 +1,6 @@
 FROM python:3.6.9
 
 
-
 WORKDIR /opt/flask-app
 
 COPY requirements.txt .
