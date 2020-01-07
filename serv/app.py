@@ -16,7 +16,7 @@ def home():
     if form.is_submitted():
         response = requests.post('http://flask-service:5001/service')
         if response.ok:
-            return  response.json()['test']
+            return  response.json()['value']
 
       # response1 = requests.get('35.246.77.128:5002')
       # data1 = response1.json()

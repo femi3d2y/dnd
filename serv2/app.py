@@ -1,5 +1,5 @@
 from flask import Flask
-import dice
+from dice import die_100
 
 app = Flask(__name__)
 
