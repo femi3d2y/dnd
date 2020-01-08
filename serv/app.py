@@ -18,14 +18,9 @@ def home():
     effects = ''
 
     if form.is_submitted():
-        response = requests.post('http://flask-service:5001/service')
-        hundred = response.json()['value']
 
-        response1 = requests.post('http://flask-service2:5002/service2')
-        ten = response1.json()['value']
-
-        response2 = requests.post('http://flask-data:5003/data')
-        effects = response2.json()['result']
+        response = requests.post('http://flask-data:5003/data')
+        effects = response.json()['result']
 
 
 

@@ -12,11 +12,11 @@ def data():
         response1 = requests.post('http://flask-service2:5002/service2')
         ten = response1.json()['value']
 
-        roll = ten + hundred
+        roll = int(ten) + int(hundred)
 
         if roll == 0:
             roll = 100
     
-        effect = Effects.query.filter_by(id = roll).all()
+        effect = Effects.query.filter_by(id = roll).first()
 
         return {'result':f'{effect}'}

@@ -8,7 +8,7 @@ class Effects(db.Model):
 
     def __repr__(self):
         return ''.join([
-            'Dice Roll: ', self.id, '\r\n',
+            'Dice Roll: ',str(self.id), '\r\n',
             'Effect: ', self.effect
         ])
         
