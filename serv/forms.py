@@ -1,6 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import Submitfield
-from application import app
+from wtforms import SubmitField
 
 
 class SubmitForm(FlaskForm):

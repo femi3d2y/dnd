@@ -1,14 +1,14 @@
 from flask import Flask
-from dnd_magic import dice
+from dice import die_10
 
 app = Flask(__name__)
 
-@app.route('/ten')
-def ten():
+@app.route('/service2', methods=['POST'])
+def service2():
 
-   num = die_10()
+   ten = die_10()
 
-   return num
+   return {'value':f'{ten}'}
 
 if __name__=='__main__':
-    app.run(debug=True, host='0.0.0.0', port=5001)
+    app.run(debug=True, host='0.0.0.0', port=5002)

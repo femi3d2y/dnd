@@ -1,0 +1,45 @@
+version: '3.7'
+services:
+    nginx:
+      container_name: nginx
+      image: nginx:latest
+      volumes:
+      - type: bind
+        source: ./nginx/nginx.conf
+        target: /etc/nginx/nginx.conf
+      ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      depends_on:
+        - flask-app
+        - flask-service
+        - flask-service2
+        - flask-data
+    flask-app:
+      build:
+        context: ./serv/
+        dockerfile: Dockerfile
+      environment:
+           - KEY=${KEY}
+    flask-service:
+      build:
+        context: ./serv2/
+        dockerfile: Dockerfile
+    flask-service2:
+      build:
+        context: ./serv3/
+        dockerfile: Dockerfile
+    flask-data:
+      build:
+        context: ./serv4/
+        dockerfile: Dockerfile
+      environment: 
+           - MY_SQL_USER=${MY_SQL_USER}
+           - MY_SQL_PASS=${MY_SQL_PASS}
+           - MY_SQL_HOST=${MY_SQL_HOST}
+           - MY_SQL_DB=${MY_SQL_DB}
+           - KEY=${KEY}
+
+
+
