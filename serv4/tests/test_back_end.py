@@ -39,6 +39,13 @@ class TestBase(TestCase):
 class testview(Testbase):
 
     def test_view_page(self):
-        
+        response =self.client.get(url_for('data'))
+        self.assertEqual(response.status_code, 200)
+
+class test_query_database(TestBase):
+
+    def test_no_of_effects(self):
+
+        self.assertEqual(Effects.query.count(), 2)
 
 

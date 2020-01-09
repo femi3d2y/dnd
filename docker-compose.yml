@@ -39,6 +39,7 @@ services:
            - MY_SQL_PASS=${MY_SQL_PASS}
            - MY_SQL_HOST=${MY_SQL_HOST}
            - MY_SQL_DB=${MY_SQL_DB}
+           - MY_SQL_DB_TEST=${MY_SQL_DB_TEST}  
            - KEY=${KEY}
 
 
