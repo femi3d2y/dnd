@@ -4,22 +4,33 @@ pipeline{
 	stages{
 		stage('--Update git repo--'){
 			steps{
-                    sh ''' cd /home/femiadmin/ansible/
-                           ansible-playbook -i inventory git-playbook.yml
+                    sh ''' ssh femiadmin@dndeffects >> IFE 
+                           sudo apt update
+                           rm -rf project/dnd
+                           cd project/
+                           git clone https://github.com/femi3d2y/dnd.git
+                           cd dnd/
+                           git checkout dev
                            '''
             }
         }
-        stage('--docker-compose push--'){
+        stage('--docker-compose build and push--'){
 			steps{
-                    sh ''' ansible-playbook -i inventory push.yml
+                    sh ''' ssh femiadmin@dndeffects >> IFE
+                           cd project/dnd
+                           docker-compose up -d --build
+                           docker-compose down 
+                           docker-compose push 
                            '''
             
             }
         }
-        stage('--Flask-App started--'){
+        stage('--Deploy services--'){
 			steps{
-				sh ''' ansible-playbook -i inventory deploy.yml
-					'''
+				sh ''' ssh femiadmin@dndeffects >> IFE
+                       		       cd project/dnd
+                       		       docker stack deploy docker-compose.yml dnd 
+				       '''
 			}
 		}
 	}
