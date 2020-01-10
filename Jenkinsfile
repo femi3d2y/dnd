@@ -6,7 +6,7 @@ pipeline{
 		
 		stage('--Update git repo--'){
 			steps{
-                    		sh '''ssh -t femiadmin@dndeffects >> IFE 
+                    		sh '''ssh -t femiadmin@dndeffects << IFE 
                            	sudo apt update
                            	rm -rf project/dnd
                            	cd project/
@@ -20,7 +20,7 @@ pipeline{
 		
         	stage('--docker-compose build and push--'){
 			steps{
-                    		sh '''ssh -t femiadmin@dndeffects >> IFE
+                    		sh '''ssh -t femiadmin@dndeffects << IFE
                            	cd project/dnd
                            	docker-compose up -d --build
                            	docker-compose down 
@@ -32,7 +32,7 @@ pipeline{
         	}
         	stage('--Deploy services--'){
 			steps{
-				sh '''ssh -t femiadmin@dndeffects >> IFE
+				sh '''ssh -t femiadmin@dndeffects << IFE
                        		cd project/dnd
                        		docker stack deploy docker-compose.yml dnd 
 				
