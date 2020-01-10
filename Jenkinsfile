@@ -4,7 +4,7 @@ pipeline{
 	stages{
 		stage('--Update git repo--'){
 			steps{
-                    sh ''' cd ansible/ 
+                    sh ''' sudo cd ansible/ 
                            sudo apt update
                            ansible-playbook -i inventory git-playbook.yml
                            '''
