@@ -6,7 +6,7 @@ pipeline{
 		
 		stage('--Update git repo--'){
 			steps{
-                    		sh ''' sudo su femiadmin
+                    		sh '''su femiadmin
 				ssh -t femiadmin@35.246.77.128  << IFE 
                            	sudo apt update
                            	rm -rf project/dnd
