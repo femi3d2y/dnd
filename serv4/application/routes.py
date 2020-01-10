@@ -19,4 +19,4 @@ def data():
     
         effect = Effects.query.filter_by(id = roll).first()
 
-        return {'result':'{}'.format(roll)}
+        return {'result':'{}'.format(effect)}
