@@ -17,20 +17,24 @@ services:
         - flask-service2
         - flask-data
     flask-app:
+      image: localhost:5000/stackapp 
       build:
         context: ./serv/
         dockerfile: Dockerfile
       environment:
            - KEY=${KEY}
     flask-service:
+      image: localhost:5000/stackservice
       build:
         context: ./serv2/
         dockerfile: Dockerfile
     flask-service2:
+      image: localhost:5000/stackservice2     
       build:
         context: ./serv3/
         dockerfile: Dockerfile
     flask-data:
+      image: localhost:5000/stackdata 
       build:
         context: ./serv4/
         dockerfile: Dockerfile
@@ -39,6 +43,7 @@ services:
            - MY_SQL_PASS=${MY_SQL_PASS}
            - MY_SQL_HOST=${MY_SQL_HOST}
            - MY_SQL_DB=${MY_SQL_DB}
+           - MY_SQL_DB_TEST=${MY_SQL_DB_TEST}  
            - KEY=${KEY}
 
 
