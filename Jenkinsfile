@@ -9,7 +9,7 @@ pipeline{
                     		sh '''ssh -t jenkins@project-app  << IFE
                            	source ~/.bashrc
 				cd project/dnd
-                           	docker-compose --build 
+                           	docker-compose build 
                            	docker-compose push
 				
                            	'''
