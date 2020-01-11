@@ -27,6 +27,7 @@ pipeline{
 			steps{
 				sh '''ssh -t jenkins@project-app  << IFE
                        		cd project/dnd
+				export BUILD_NUMBER=${BUILD_NUMBER}
                        		docker stack deploy --compose-file docker-compose.yml dnd 
 				
 				'''
