@@ -27,6 +27,12 @@ pipeline{
 			steps{
 				sh '''ssh -t jenkins@project-app  << IFE
                        		cd project/dnd
+				export KEY=${KEY}
+				export MY_SQL_HOST=${MY_SQL_HOST}
+				export MY_SQL_USER=${MY_SQL_USER} 
+				export MY_SQL_PASS=${MY_SQL_PASS}
+				export MY_SQL_DB=${MY_SQL_DB}
+				export MY_SQL_DB_TEST=${MY_SQL_DB_TEST}
 				export BUILD_NUMBER=${BUILD_NUMBER}
                        		docker stack deploy --compose-file docker-compose.yml dnd 
 				
