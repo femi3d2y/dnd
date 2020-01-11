@@ -6,7 +6,7 @@ pipeline{
 		
         	stage('--docker-compose build and push--'){
 			steps{
-                    		sh '''ssh -t jenkins@35.246.77.128  << IFE
+                    		sh '''ssh -t jenkins@project-app  << IFE
                            	cd project/dnd
                            	docker-compose up -d --build
                            	docker-compose down 
@@ -18,7 +18,7 @@ pipeline{
         	}
         	stage('--Deploy services--'){
 			steps{
-				sh '''ssh -t jenkins@35.246.77.128  << IFE
+				sh '''ssh -t jenkins@project-app  << IFE
                        		cd project/dnd
                        		docker stack deploy docker-compose.yml dnd 
 				
