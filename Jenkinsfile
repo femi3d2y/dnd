@@ -8,6 +8,7 @@ pipeline{
 			steps{
                     		sh '''ssh -t jenkins@project-app  << IFE
                            	source ~/.bashrc
+				echo ${MY_SQL_HOST}
 				cd project/dnd
                            	docker-compose build 
                            	docker-compose push
