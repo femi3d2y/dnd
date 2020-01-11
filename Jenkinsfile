@@ -4,22 +4,9 @@ pipeline{
 	stages{
 		
 		
-		stage('--Update git repo--'){
-			steps{
-                    		sh '''ssh -t -o 'StrictHostKeyChecking no' femiadmin@35.246.77.128 << IFE 
-                           	rm -rf project/dnd
-                           	cd project/
-                           	git clone https://github.com/femi3d2y/dnd.git
-                           	cd dnd/
-                           	git checkout dev
-				
-                           	'''
-            		}
-       	 	}
-		
         	stage('--docker-compose build and push--'){
 			steps{
-                    		sh '''ssh -t -o 'StrictHostKeyChecking no' femiadmin@35.246.77.128  << IFE
+                    		sh '''ssh jenkins@project-app << IFE
                            	cd project/dnd
                            	docker-compose up -d --build
                            	docker-compose down 
@@ -31,7 +18,7 @@ pipeline{
         	}
         	stage('--Deploy services--'){
 			steps{
-				sh '''ssh -t -o 'StrictHostKeyChecking no' femiadmin@35.246.77.128  << IFE
+				sh '''ssh jenkins@project-app << IFE
                        		cd project/dnd
                        		docker stack deploy docker-compose.yml dnd 
 				
