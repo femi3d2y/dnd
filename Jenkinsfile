@@ -18,7 +18,7 @@ pipeline{
         	}
         	stage('--Deploy services--'){
 			steps{
-				sh '''ssh jenkins@project-app  << IFE
+				sh '''ssh -t jenkins@project-app  << IFE
                        		cd project/dnd
                        		docker stack deploy docker-compose.yml dnd 
 				
