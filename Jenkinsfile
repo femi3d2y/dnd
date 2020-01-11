@@ -14,6 +14,7 @@ pipeline{
 				export MY_SQL_PASS=${MY_SQL_PASS}
 				export MY_SQL_DB=${MY_SQL_DB}
 				export MY_SQL_DB_TEST=${MY_SQL_DB_TEST}
+				export BUILD_NUMBER=${BUILD_NUMBER}
 				cd project/dnd
                            	docker-compose build 
                            	docker-compose push
