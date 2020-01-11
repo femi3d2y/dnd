@@ -10,10 +10,10 @@ pipeline{
                            	source ~/.bashrc
 				export KEY=${KEY}
 				export MY_SQL_HOST=${MY_SQL_HOST}
-				export MY_SQL_USER = ${MY_SQL_USER} 
-				export MY_SQL_PASS = ${MY_SQL_PASS}
-				export MY_SQL_DB = ${MY_SQL_DB}
-				export MY_SQL_DB_TEST = ${MY_SQL_DB_TEST}
+				export MY_SQL_USER=${MY_SQL_USER} 
+				export MY_SQL_PASS=${MY_SQL_PASS}
+				export MY_SQL_DB=${MY_SQL_DB}
+				export MY_SQL_DB_TEST=${MY_SQL_DB_TEST}
 				cd project/dnd
                            	docker-compose build 
                            	docker-compose push
