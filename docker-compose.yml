@@ -17,24 +17,24 @@ services:
         - flask-service2
         - flask-data
     flask-app:
-      image: projectjenkins:5000/stackapp 
+      image: http://35.234.154.83:5000/stackapp 
       build:
         context: ./serv/
         dockerfile: Dockerfile
       environment:
            - KEY=${KEY}
     flask-service:
-      image: projectjenkins:5000/stackservice
+      image: http://35.234.154.83:5000/stackservice
       build:
         context: ./serv2/
         dockerfile: Dockerfile
     flask-service2:
-      image: projectjenkins:5000/stackservice2     
+      image: http://35.234.154.83:5000/stackservice2     
       build:
         context: ./serv3/
         dockerfile: Dockerfile
     flask-data:
-      image: projectjenkins:5000/stackdata 
+      image: http://35.234.154.83:5000/stackdata 
       build:
         context: ./serv4/
         dockerfile: Dockerfile
