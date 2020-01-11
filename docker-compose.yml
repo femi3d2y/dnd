@@ -17,24 +17,24 @@ services:
         - flask-service2
         - flask-data
     flask-app:
-      image: 35.234.154.83:5000/stackapp 
+      image: 35.234.154.83:5000/stackapp:${BUILD_NUMBER} 
       build: 
         context: ./serv/
         dockerfile: Dockerfile
       environment:
            - KEY=${KEY}
     flask-service:
-      image: 35.234.154.83:5000/stackservice
+      image: 35.234.154.83:5000/stackservice:${BUILD_NUMBER} 
       build: 
         context: ./serv2/
         dockerfile: Dockerfile
     flask-service2:
-      image: 35.234.154.83:5000/stackservice2     
+      image: 35.234.154.83:5000/stackservice2:${BUILD_NUMBER}     
       build: 
         context: ./serv3/
         dockerfile: Dockerfile
     flask-data:
-      image: 35.234.154.83:5000/stackdata 
+      image: 35.234.154.83:5000/stackdata:${BUILD_NUMBER} 
       build: 
         context: ./serv4/
         dockerfile: Dockerfile
