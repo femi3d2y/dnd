@@ -27,10 +27,10 @@ pipeline{
 			steps{
 				sh '''ssh -t jenkins@project-app  << IFE
                        		cd project/dnd
-				docker service update --replicas 7 dnd_flask-app
-				docker service update --replicas 7 dnd_flask-service
-				docker service update --replicas 7 dnd_flask-service2
-				docker service update --replicas 7 dnd_flask-data
+				docker service update --replicas 5 dnd_flask-app
+				docker service update --replicas 5 dnd_flask-service
+				docker service update --replicas 5 dnd_flask-service2
+				docker service update --replicas 5 dnd_flask-data
 				
 				'''
 			}
