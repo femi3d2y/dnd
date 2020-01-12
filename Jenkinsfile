@@ -16,6 +16,7 @@ pipeline{
 				export MY_SQL_DB_TEST=${MY_SQL_DB_TEST}
 				export BUILD_NUMBER=${BUILD_NUMBER}
 				cd project/dnd
+				sudo git pull
                            	docker-compose build 
                            	docker-compose push
 				
@@ -39,7 +40,6 @@ pipeline{
 			steps{
 				sh '''ssh -t jenkins@project-app  << IFE
                        		cd project/dnd
-				sudo git pull
 				docker service update --image 35.234.154.83:5000/stackapp:${BUILD_NUMBER} dnd_flask-app
 				
 				
