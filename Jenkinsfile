@@ -34,6 +34,7 @@ pipeline{
 				export MY_SQL_DB=${MY_SQL_DB}
 				export MY_SQL_DB_TEST=${MY_SQL_DB_TEST}
 				export BUILD_NUMBER=${BUILD_NUMBER}
+				echo ${KEY}
                        		docker stack deploy --compose-file docker-compose.yml dnd 
 				
 				'''
