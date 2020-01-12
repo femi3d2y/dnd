@@ -32,3 +32,10 @@
       owner: jenkins
       group: jenkins
       mode: '0700'
+  - name: Change permissions for git directory
+    file:
+      path: /home/jenkins/project/dnd/.git
+      state: directory
+      owner: jenkins
+      group: jenkins
+      mode: '0700'
