@@ -38,9 +38,8 @@ pipeline{
 		stage('--Update service--'){
 			steps{
 				sh '''ssh -t jenkins@project-app  << IFE
-				sudo su jenkins
                        		cd project/dnd
-				git pull
+				sudo git pull
 				docker service update --image 35.234.154.83:5000/stackapp:${BUILD_NUMBER} dnd_flask-app
 				
 				
