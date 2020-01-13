@@ -7,14 +7,6 @@ pipeline{
         	stage('--docker-compose build and push--'){
 			steps{
                     		sh '''ssh -t jenkins@project-app  << IFE
-                           	source ~/.bashrc
-				export KEY=${KEY}
-				export MY_SQL_HOST=${MY_SQL_HOST}
-				export MY_SQL_USER=${MY_SQL_USER} 
-				export MY_SQL_PASS=${MY_SQL_PASS}
-				export MY_SQL_DB=${MY_SQL_DB}
-				export MY_SQL_DB_TEST=${MY_SQL_DB_TEST}
-				export BUILD_NUMBER=${BUILD_NUMBER}
 				cd project/dnd
 				sudo git pull
                            	docker-compose build 
@@ -28,10 +20,10 @@ pipeline{
 			steps{
 				sh '''ssh -t jenkins@project-app  << IFE
                        		cd project/dnd
-				docker service update --replicas 5 dnd_flask-app
-				docker service update --replicas 5 dnd_flask-service
-				docker service update --replicas 5 dnd_flask-service2
-				docker service update --replicas 5 dnd_flask-data
+				docker service update --replicas 3 dnd_flask-app
+				docker service update --replicas 2 dnd_flask-service
+				docker service update --replicas 2 dnd_flask-service2
+				docker service update --replicas 2 dnd_flask-data
 				
 				'''
 			}
